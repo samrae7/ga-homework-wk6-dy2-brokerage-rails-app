@@ -1,0 +1,24 @@
+// Place all the styles related to the clients controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h2, h3 {
+  margin-left: 30px
+}
+
+p.stock-info {
+  width:100 px;
+  display: inline;
+  margin:0 30px;
+  padding: 0;
+}
+
+.client-summary {
+  margin:30px;
+}
+
+.client-summary p {
+  margin: 0;
+  padding: 0;
+
+}

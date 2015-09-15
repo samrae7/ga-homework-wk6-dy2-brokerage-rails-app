@@ -1,0 +1,27 @@
+<h2>Client balance sheet</h2>
+
+<h3><%= @client.name %></h3>
+
+<% @money_invested = 0 %>
+
+<% @client_stocks.each do |client_stock| %>
+
+  <% @total_this_stock = (client_stock.amount * client_stock.stock.price).to_i %>
+  <div>
+    <p class = 'stock-info'>Stock: <%= client_stock.stock.name %></p>
+    <p class ='stock-info'>Stock price: £<%= client_stock.stock.price.to_i %></p>
+    <p class ='stock-info'>Amount: <%= client_stock.amount %></p>
+     <p class ='stock-info'>Total for this stock: £<%= @total_this_stock %></p>
+  </div>
+  <% @money_invested += @total_this_stock %>
+<% end %>
+
+<div class = 'client-summary'>
+
+  <p>Total invested: £<%= @money_invested %></p>
+
+  <p>Starting cash balance: £<%= @client.cash.to_i %></p>
+
+  <p>Remaining cash balance: £<%= @client.cash.to_i - @money_invested %></p>
+
+</div>
